@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dean Notebook</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Comic Sans MS';
+      background-color: #121212;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .portada {
+      width: 400px;
+      height: 600px;
+      background: repeating-linear-gradient(
+        0deg,
+        #ec2716e5,
+        #670202, 30px,
+        #ffffff 30px,
+        #ffffff 60px
+      );
+      border: 10px solid #800000;
+      border-left: 60px solid #850000;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      cursor: pointer;
+    }
+    .titulo {
+      font-size: 2.5em;
+      color: #e8ca22;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 4px;
+      margin-top: 10px;
+    }
+    .titulo span {
+      display: inline-block;
+      background-color: #5a5cc8;
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin: 0 3px;
+      transform: rotate(-5deg);
+    }
+    .imagen {
+      width: 100px;
+      margin: 15px auto;
+      display: block;
+    }
+    .etiqueta {
+      width: 80%;
+      height: 50px;
+      margin: 20px auto;
+      border: 2px solid rgb(112, 120, 212);
+      border-radius: 10px;
+      background-color: rgb(250, 247, 209);
+      line-height: 50px;
+      font-size: 1.1em;
+      color: #e61515;
+      text-align: center;
+    }
+    .decoracion {
+      position: absolute;
+      font-size: 2em;
+    }
+    .corazon {
+      color: #f95395;
+    }
+    .estrella {
+      color: #5e8cff;
+    }
+    .inferior {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 0.9em;
+      color: #66a0f7;
+    }
+    #paginaInterior {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #380000;
+      z-index: 10;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .cuaderno-abierto {
+      display: flex;
+      width: 800px;
+      height: 600px;
+      box-shadow: 0px 20px 30px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .hoja {
+      width: 400px;
+      height: 600px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #ffffff,
+        #ffffff 25px,
+        #cb002284 25px,
+        #8304197a 26px
+      );
+      border-left: 8px solid #880000;
+      border-right: 8px solid #660014;
+      padding: 30px;
+      font-size: 1em;
+      color: #4f1313;
+      overflow-y: auto;
+    }
+    .hoja h2 {
+      color: #b49c00;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .cerrar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background-color: white;
+      color: #3b0000;
+      border: 2px solid rgb(203, 0, 0);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 1em;
+      cursor: pointer;
+      z-index: 20;
+    }
+    @media (max-width: 850px) {
+      .cuaderno-abierto {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+      }
+      .hoja {
+        width: 100%;
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portada" id="portada" onclick="abrirCuaderno()">
+    <div class="titulo">
+      <span>N</span><span>O</span><span>T</span><span>E</span> BOOK
+    </div>
+    <img class="imagen" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG20.png" alt="Peluche Kawaii">
+    <div class="etiqueta">DEDICADO A DEAN</div>
+    <img class="imagen" src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG43.png" alt="Sundae Kawaii">
+    <div class="decoracion corazon" style="top: 20px; left: 80px;">❤</div>
+    <div class="decoracion estrella" style="top: 50px; right: 50px;">★</div>
+    <div class="decoracion estrella" style="bottom: 80px; left: 40px;">★</div>
+    <div class="decoracion corazon" style="bottom: 60px; right: 80px;">❤</div>
+    <div class="inferior">Te quiero, nake.</div>
+  </div>
+  <div id="paginaInterior">
+    <button class="cerrar" onclick="cerrarCuaderno()">★ Cerrar</button>
+  <div class="cuaderno-abierto">
+  <div class="hoja">
+    <h2>✧ Dean Zannier✧</h2>
+    <p> Si estás leyendo esto es porque es 04 de septiembre. Quiero que sepas cuánto significas para mí. Desde que llegaste a mi vida, todo ha cambiado para mejor. Tu risa ilumina mis días y evidentemente tu estancia también ha dejado una huella imborrable en mi corazón.  Espero que siempre sea así, mi cielo.</p>
+    <img src="ee.jpeg" 
+          style="width: 70px; border: 4px solid #a50000; border-radius: 15px; margin: 15px 10px;">
+    <img src="eew.jpeg" 
+         style="width: 70px; border: 4px solid #680215; border-radius: 15px; margin: 15px 10px;">
+    <img src="tt.jpg" 
+         style="width: 60px; border: 4px solid #76003f; border-radius: 50%; margin: 15px 10px;">
+    <h2>HOY SERÁ UN DÍA MARAVILLOSO.</h2> 
+  </div>
+  <div class="hoja"> 
+    <h2>✧¡FALTAN 24 DÍAS!✧</h2> 
+    <p>Ya falta poco para ese día tan especial. Estoy contando los días con emoción y anticipación. Ya estás grandote, cada día más viejo.</p>
+    <img src="qq.jpg" 
+         style="width: 70px; border: 4px solid #c9005a; border-radius: 15px; margin: 15px 10px;">
+    <img src="aa.jpg" 
+         style="width: 65px; border: 4px solid #7d002a; border-radius: 15px; margin: 15px 10px;">
+    <img src="ww.jpg" 
+         style="width: 65px; border: 4px solid #4d0029; border-radius: 15px; margin: 15px 10px;">
+    <p>Estoy feliz de tenerte en mi vida, mi gorde. Te amo mucho.</p>
+<p> Con cariño,</p>
+<p> Ander.</p>
+  </div>
+</div>
+  <script>
+    function abrirCuaderno() {
+      document.getElementById('portada').style.display = 'none';
+      document.getElementById('paginaInterior').style.display = 'flex';
+    }
+    function cerrarCuaderno() {
+      document.getElementById('paginaInterior').style.display = 'none';
+      document.getElementById('portada').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
